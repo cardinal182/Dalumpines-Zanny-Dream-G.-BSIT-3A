@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator-chan — Game Mode</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    <div class="calculator-container game">
+        <div class="header">
+            <div class="hud-left">
+                <div class="lives">
+                    <span class="pixel-heart"></span>
+                    <span class="pixel-heart"></span>
+                    <span class="pixel-heart"></span>
+                </div>
+            </div>
+            <h2 class="title-badge">LEVEL UP — Calculator-chan</h2>
+            <div class="hud-right">
+                <div class="score-badge">0010</div>
+            </div>
+        </div>
+        
+        <div class="calculator">
+            <div class="input-group">
+                <input type="number" id="num1" placeholder="Enter first number" class="number-input">
+                <select id="operation" class="operation-select">
+                    <option value="add">Add (+)</option>
+                    <option value="subtract">Subtract (-)</option>
+                    <option value="multiply">Multiply (×)</option>
+                    <option value="divide">Divide (÷)</option>
+                </select>
+                <input type="number" id="num2" placeholder="Enter second number" class="number-input">
+            </div>
+            
+            <button id="calculateBtn" class="compute-btn">Compute</button>
+            
+            <div class="result-container">
+                <p id="result" class="result">Result will appear here</p>
+            </div>
+        </div>
+    </div>
+    <audio id="btnSound" src="hitHurt.mp3" preload="auto"></audio>
+    <audio id="hoverSound" src="laserShoot.wav" preload="auto"></audio>
+    <script src="calculator.js"></script>
+</body>
+</html>

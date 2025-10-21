@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.back-link{
+    position:fixed;
+    top:12px;left:12px;
+    padding:6px 10px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:13px;
+    opacity:0.65;
+    transition:opacity .15s;}
+.back-link:hover{
+    opacity:1;
+    }
+body.light 
+
+.back-link{
+    background:rgba(255,255,255,0.08);
+    color:#00fff7;}
+body.dark .back-link{
+    background:rgba(0,0,0,0.45);
+    color:#00fff7;}
+
+:root{
+
+	--bg1: #04030a;      
+	--bg2: #0b0020;      
+	--neon-cyan: #00f0ff;
+	--neon-magenta: #ff00c8;
+	--neon-yellow: #fff200;
+	--panel: #070516;
+	--pixel-black: #050409;
+}
+
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family: 'Press Start 2P', monospace;
+	background:
+		repeating-linear-gradient(90deg, rgba(255,255,255,0.01) 0 1px, transparent 1px 6px),
+		radial-gradient(800px 400px at 10% 10%, rgba(0,240,255,0.03), transparent),
+		linear-gradient(180deg,var(--bg1),var(--bg2));
+	color:var(--neon-cyan);
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+body::before{
+	content:"";
+	position:fixed; inset:0;
+	pointer-events:none;
+	background-image: linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+	background-size: 6px 6px, 6px 6px;
+	opacity:0.6;
+}
+
+.game-screen .card{
+	width:320px;
+	padding:26px;
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.18));
+	border:6px solid var(--pixel-black);
+	box-shadow:
+		4px 4px 0 0 rgba(0,0,0,0.6),            /* hard drop shadow */
+		inset 0 -6px 0 rgba(255,255,255,0.02);
+	text-align:center;
+	border-radius:0; /* pixel look */
+}
+
+.label{
+	font-size:16px;
+	letter-spacing:2px;
+	padding:18px 12px;
+	background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(255,255,255,0.02));
+	border:4px solid var(--pixel-black);
+	box-shadow:
+		0 0 0 4px rgba(0,0,0,0.3),
+		0 4px 0 rgba(0,0,0,0.6),
+		0 0 18px rgba(0,0,0,0.2);
+	text-transform:uppercase;
+	color: var(--neon-cyan);
+	text-shadow:
+		0 0 0 black,
+		0 0 6px rgba(0,240,255,0.55),
+		0 0 12px rgba(0,240,255,0.28),
+		0 0 20px rgba(0,240,255,0.12);
+	border-radius:0;
+}
+
+.card.hello .label{
+	color: var(--neon-magenta);
+	text-shadow:
+		0 0 0 black,
+		0 0 6px rgba(255,0,200,0.55),
+		0 0 12px rgba(255,0,200,0.28),
+		0 0 20px rgba(255,0,200,0.12);
+}
+
+.toggle{
+	margin:18px auto 8px;
+	width:140px;
+	height:46px;
+	display:block;
+	position:relative;
+	border:6px solid var(--pixel-black);
+	background: linear-gradient(180deg,#111 0%, #06060a 100%);
+	border-radius:0; /* pixel edges */
+	box-shadow:
+		6px 6px 0 0 rgba(0,0,0,0.7),
+		inset 0 -6px 0 rgba(255,255,255,0.02);
+	cursor:pointer;
+	transition:transform 120ms ease;
+	outline:none;
+}
+
+.toggle:active{ transform: translateY(2px); box-shadow: 4px 4px 0 rgba(0,0,0,0.6); }
+
+.switch{
+	position:absolute;
+	top:6px;
+	left:6px;
+	width:64px;
+	height:34px;
+	background: linear-gradient(180deg,var(--neon-cyan), #00c8d8);
+	border:2px solid var(--pixel-black);
+	box-shadow:
+		0 4px 0 rgba(0,0,0,0.6),
+		0 0 8px rgba(0,240,255,0.16);
+	transition: transform 180ms cubic-bezier(.2,.9,.2,1), background 120ms ease;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:#040408;
+	font-weight:700;
+	font-size:10px;
+	letter-spacing:1px;
+	text-shadow:none;
+	border-radius:0;
+}
+
+.toggle.active .switch{
+	transform: translateX(70px);
+	background: linear-gradient(180deg,var(--neon-magenta), #ff3ac4);
+	box-shadow:
+		0 4px 0 rgba(0,0,0,0.6),
+		0 0 12px rgba(255,0,200,0.16);
+	color:#fff;
+}
+
+.switch::after{
+	content: '';
+	position:absolute;
+	right:6px;
+	top:8px;
+	width:6px;
+	height:6px;
+	background: rgba(255,255,255,0.08);
+	box-shadow: 10px 0 0 rgba(255,255,255,0.06), 20px 0 0 rgba(255,255,255,0.04);
+}
+
+.toggle.active ~ .instructions,
+.card.hello .instructions{
+	color: var(--neon-magenta);
+}
+
+.instructions{
+	margin-top:8px;
+	font-size:9px;
+	opacity:0.9;
+	letter-spacing:1.5px;
+	color: var(--neon-cyan);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.7);
+}
+
+.toggle:focus{ box-shadow: 0 0 0 6px rgba(0,240,255,0.06); outline: none; }

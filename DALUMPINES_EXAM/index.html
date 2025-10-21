@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zanny Dream Dalumpines — Portfolio</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .audio-toggle{
+            position:fixed;
+            top:12px;
+            left:12px;
+            width:36px;
+            height:28px;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            padding:4px;
+            border-radius:0;
+            text-decoration:none;
+            background:var(--card);
+            opacity:0.9;
+            transition:opacity .08s;
+            z-index:3000;
+            border:6px solid var(--accent);
+            box-shadow: 0 0 0 6px #000, 0 0 0 8px var(--accent);
+        }
+        .audio-toggle:hover{opacity:1;}
+        body.light .audio-toggle{background:rgba(255,255,255,0.06);}
+        body.dark .audio-toggle{background:rgba(0,0,0,0.30);}
+        .audio-toggle svg{image-rendering:optimizeSpeed;shape-rendering:crispEdges;overflow:visible;}
+    </style>
+</head>
+<body>
+    <div id="entranceOverlay" class="entrance">
+        <div class="entrance-card">
+            <h1>WELCOME PLAYER!</h1>
+            <p>Press Start</p>
+            <button id="startBtn" class="btn">START</button>
+        </div>
+    </div>
+    <audio id="bgMusic" src="Tuberpolis.mp3" preload="auto" loop></audio>
+    <div class="nav-box nav-top">
+        <ul>
+            <li><button onclick="scrollToSection('home')">Home</button></li>
+            <li><button onclick="scrollToSection('resume')">Resume</button></li>
+            <li><button onclick="scrollToSection('education')">Education</button></li>
+            <li><button onclick="scrollToSection('experience')">Experience</button></li>
+            <li><button onclick="scrollToSection('projects')">Projects</button></li>
+            <li><button onclick="scrollToSection('game')">🎮 Game</button></li>
+            <li><button onclick="scrollToSection('labs')">Laboratory Activities</button></li>
+        </ul>
+    </div>
+
+    <div class="score-bar">
+        <div class="game-stats">
+            <div class="stat">
+                <span class="stat-label">LEVEL</span>
+                <span class="stat-value" id="levelValue">1</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">SCORE</span>
+                <span class="stat-value" id="scoreValue">2024</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">HEALTH</span>
+                <div class="health-bar">
+                    <div class="health-fill" id="healthFill"></div>
+                </div>
+            </div>
+            <div class="stat">
+                <span class="stat-label">XP</span>
+                <div class="xp-bar">
+                    <div class="xp-fill" id="xpFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="avatar">ZD</div>
+                <div>
+                    <h2>Zanny Dream Dalumpines BSIT - 3A</h2>
+                    <p>Age: 24</p>
+                    <span class="muted">Web Developer & Student</span>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section id="home" class="card hero">
+                <div class="info">
+                    <h1>Welcome to My Portfolio!</h1>
+                    <p>Hi, I'm Zanny Dream Dalumpines, a passionate web developer and student. Explore my skills, experience, and projects below.</p>
+                    <div class="cta">
+                    </div>
+                </div>
+            </section>
+            <section id="education" class="card">
+                <div class="section-title">
+                    <h1>Education</h1>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong>Elementary</strong><br>
+                        <span class="muted">Digos City Central Elementary School</span>
+                        <div class="muted">Year Graduated: 2011-2012</div>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>High School</strong><br>
+                        <span class="muted">Holy Cross Academy of Digos City</span>
+                        <div class="muted">Year Graduated: 2015-2016</div>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Senior High School — ICT strand</strong><br>
+                        <span class="muted">Polytechnic College of Davao del Sur</span>
+                        <div class="muted">Year Graduated 2018-2019.</div>
+                    </div>
+                </div>
+            </section>
+            <section id="resume" class="card">
+                <div class="section-title">
+                    <h3>Resume / CV</h3>
+                </div>
+                <div class="resume-grid">
+                    <div class="contact">
+                        <strong>Zanny Dream Dalumpines</strong><br>
+                        <span class="muted">Web Developer & Student</span>
+                        <div class="muted" style="margin-top:8px;">
+                            Email: <a href="mailto:zannydream182@gmail.com">zannydream182@gmail.com</a><br>
+                            Phone: <span>+63 098 360 836</span><br>
+                            LinkedIn: <a href="#" target="_blank">linkedin.com/in/zanny</a><br>
+                            GitHub: <a href="https://github.com/zanny" target="_blank">github.com/zanny</a>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="summary">
+                        <strong>Career Summary</strong>
+                        <p>Motivated web developer with a solid foundation in HTML, CSS and JavaScript. Experienced building responsive interfaces and contributing to small team projects; familiar with C#/.NET and SQL.</p>
+                        <strong>Key Skills</strong>
+                        <p></p>
+                        <div class="skills" style="margin-top:6px;">
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">C# / .NET</span>
+                            <span class="chip">SQL</span>
+                        </div>
+                        <strong style="display:block;margin-top:10px;">Links</strong>
+                        <div class="muted">
+                            <a href="https://www.facebook.com/zanny.dream.dalumpines.2024" target="_blank">Facebook</a> •
+                            <a href="https://www.youtube.com/@ZannyHeatCliff" target="_blank">YouTube</a> •
+                            <a href="https://github.com/zanny" target="_blank">GitHub</a>
+                            <p></p>
+                        </div>
+                        <div class="cv-actions" style="margin-top:12px;">
+                            <button class="btn" id="viewCvBtn">View CV</button>
+                            <a class="btn" id="downloadCvBtn" href="zanny.jpg" download>Download CV</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CV Preview Modal -->
+            <div id="cvModal" class="modal" style="display:none;">
+                <div class="modal-card project-modal">
+                    <div class="modal-header">
+                        <h3>Curriculum Vitae</h3>
+                        <button class="close-btn" id="closeCvBtn">×</button>
+                    </div>
+                    <div class="modal-content" style="display:flex;flex-direction:column;gap:12px;">
+                        <div style="text-align:center;">
+                            <img id="cvImage" src="cvz.jpg" alt="Curriculum Vitae" style="max-width:100%;height:auto;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.4);" />
+                        </div>
+                        <div style="text-align:center;">
+                            <a class="btn" href="cvz.jpg" download>Download Image</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="experience" class="card">
+                <div class="section-title">
+                    <h3>Experience</h3>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong>Web Developer Intern</strong><br>
+                        <span class="muted">Tech Solutions Inc. — Summer 2024</span>
+                        <ul>
+                            <li>Built responsive landing pages using semantic HTML and modern CSS.</li>
+                            <li>Improved page performance and accessibility for campaign pages.</li>
+                            <li>Collaborated with designers and back-end devs to integrate APIs.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Freelance Web Designer</strong><br>
+                        <span class="muted">2023–Present</span>
+                        <ul>
+                            <li>Designed and deployed websites for local small businesses.</li>
+                            <li>Integrated contact forms and basic CMS using JavaScript and local storage.</li>
+                            <li>Maintained projects and provided minor content updates.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="card">
+                <div class="section-title">
+                    <h3>Projects</h3>
+                </div>
+                <div class="projects">
+                    <div class="project-card" data-project="portfolio">
+                        <div class="project-header">
+                        <h4>Portfolio Website</h4>
+                            <div class="project-level">LVL 3</div>
+                        </div>
+                        <div class="muted">A personal portfolio built with HTML, CSS, and JavaScript. Features responsive design and interactive modal contact form.</div>
+                        <div class="tech-stack">
+                            <span class="tech-chip">HTML</span>
+                            <span class="tech-chip">CSS</span>
+                            <span class="tech-chip">JS</span>
+                        </div>
+                        <div class="project-stats">
+                            <span class="stat">⭐ 4.8/5</span>
+                            <span class="stat">👀 1.2k views</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="tasktracker">
+                        <div class="project-header">
+                        <h4>Task Tracker App</h4>
+                            <div class="project-level">LVL 2</div>
+                        </div>
+                        <div class="muted">A simple web app to track daily tasks. Includes local storage and dynamic UI updates.</div>
+                        <div class="tech-stack">
+                            <span class="tech-chip">HTML</span>
+                            <span class="tech-chip">CSS</span>
+                            <span class="tech-chip">JS</span>
+                        </div>
+                        <div class="project-stats">
+                            <span class="stat">⭐ 4.5/5</span>
+                            <span class="stat">👀 856 views</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="pos">
+                        <div class="project-header">
+                            <h4>C# POS System</h4>
+                            <div class="project-level">LVL 4</div>
+                        </div>
+                        <div class="muted">A complete Point of Sale system built with C# and .NET. Features database integration and modern UI design.</div>
+                        <div class="tech-stack">
+                            <span class="tech-chip">C#</span>
+                            <span class="tech-chip">.NET</span>
+                            <span class="tech-chip">SQL</span>
+                        </div>
+                        <div class="project-stats">
+                            <span class="stat">⭐ 4.9/5</span>
+                            <span class="stat">👀 2.1k views</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="game" class="card">
+                <div class="section-title">
+                    <h3>🎮 8-Bit Games</h3>
+                </div>
+                <div class="games-tabs">
+                    <button class="game-tab active" onclick="switchGame('space')">Space Shooter</button>
+                    <button class="game-tab" onclick="switchGame('tetris')">Tetris</button>
+                </div>
+                <div class="game-container">
+                    <div class="game-ui">
+                        <div class="game-stats">
+                            <div class="game-stat">
+                                <span class="stat-label">LIVES</span>
+                                <span class="stat-value" id="gameLives">3</span>
+                            </div>
+                            <div class="game-stat">
+                                <span class="stat-label">SCORE</span>
+                                <span class="stat-value" id="gameScore">0</span>
+                            </div>
+                            <div class="game-stat">
+                                <span class="stat-label">LEVEL</span>
+                                <span class="stat-value" id="gameLevel">1</span>
+                            </div>
+                        </div>
+                        <div class="game-controls">
+                            <button class="btn game-btn" id="startGameBtn">START GAME</button>
+                            <button class="btn game-btn" id="pauseGameBtn" style="display:none;">PAUSE</button>
+                        </div>
+                    </div>
+                    <div class="game-canvas-container">
+                        <canvas id="gameCanvas" width="800" height="400"></canvas>
+                        <div class="game-overlay" id="gameOverlay">
+                            <div class="game-message">
+                                <h2>SPACE SHOOTER</h2>
+                                <p>Use WASD or Arrow Keys to move</p>
+                                <p>Press SPACE to shoot</p>
+                                <p>Survive as long as possible!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-instructions">
+                        <div class="instruction">
+                            <span class="key">WASD</span>
+                            <span class="desc">Move Ship</span>
+                        </div>
+                        <div class="instruction">
+                            <span class="key">SPACE</span>
+                            <span class="desc">Shoot</span>
+                        </div>
+                        <div class="instruction">
+                            <span class="key">P</span>
+                            <span class="desc">Pause</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-container" id="tetrisGame" style="display: none;">
+                    <div class="game-ui">
+                        <div class="game-stats">
+                            <div class="game-stat">
+                                <span class="stat-label">SCORE</span>
+                                <span class="stat-value" id="tetrisScore">0</span>
+                            </div>
+                            <div class="game-stat">
+                                <span class="stat-label">LINES</span>
+                                <span class="stat-value" id="tetrisLines">0</span>
+                            </div>
+                            <div class="game-stat">
+                                <span class="stat-label">LEVEL</span>
+                                <span class="stat-value" id="tetrisLevel">1</span>
+                            </div>
+                        </div>
+                        <div class="game-controls">
+                            <button class="btn game-btn" id="startTetrisBtn">START TETRIS</button>
+                            <button class="btn game-btn" id="pauseTetrisBtn" style="display:none;">PAUSE</button>
+                        </div>
+                    </div>
+                    <div class="tetris-container">
+                        <div class="tetris-main">
+                            <div class="tetris-canvas-container">
+                                <canvas id="tetrisCanvas" width="300" height="600"></canvas>
+                                <div class="game-overlay" id="tetrisOverlay">
+                                    <div class="game-message">
+                                        <h2>TETRIS</h2>
+                                        <p>Use A/D or Arrow Keys to move</p>
+                                        <p>Use W or Up Arrow to rotate</p>
+                                        <p>Use S or Down Arrow for soft drop</p>
+                                        <p>Fill complete lines to clear them!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tetris-sidebar">
+                                <div class="next-piece">
+                                    <h4>NEXT</h4>
+                                    <canvas id="nextCanvas" width="80" height="80"></canvas>
+                                </div>
+                                <div class="tetris-instructions">
+                                    <div class="instruction">
+                                        <span class="key">A/D</span>
+                                        <span class="desc">Move</span>
+                                    </div>
+                                    <div class="instruction">
+                                        <span class="key">W</span>
+                                        <span class="desc">Rotate</span>
+                                    </div>
+                                    <div class="instruction">
+                                        <span class="key">S</span>
+                                        <span class="desc">Drop</span>
+                                    </div>
+                                    <div class="instruction">
+                                        <span class="key">P</span>
+                                        <span class="desc">Pause</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="labs" class="card">
+                <div class="section-title">
+                    <h3>Laboratory Activities</h3>
+                </div>
+                <div class="labs">
+                    <div class="lab">
+                        <div>
+                            <button class="btn" onclick="window.location.href='myfirstwebsite.html'">My First Website</button>
+                        </div>
+                    </div>
+                    <div class="lab">
+                        <div>
+                            <button class="btn" onclick="window.location.href='aboutme.html'">About me</button>
+                        </div>
+                    </div>
+                    <div class="lab">
+                        <div>
+                            <button class="btn" onclick="window.location.href='darkmode.html'">Toggle Dark Mode</button>
+                        </div>
+                    </div>
+                    <div class="lab">
+                        <div>
+                            <button class="btn" onclick="window.location.href='calculator.html'">Calculator</button>
+                        </div>
+                    </div>
+                    <div class="lab">
+                        <div>
+                            <button class="btn" onclick="window.location.href='toggle.html'">Toggle</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            © 2025 Zanny Dream Dalumpines
+        </footer>
+    </div>
+    <button id="audioToggle" class="audio-toggle" aria-label="Toggle background audio">🔊</button>
+    <audio id="btnSound" src="hitHurt.mp3" preload="auto"></audio>
+    <audio id="hoverSound" src="laserShoot.wav" preload="auto"></audio>
+    <audio id="explosionSound" src="explosion.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+    <script>
+        (function(){
+            const btn = document.getElementById('audioToggle');
+            if(!btn) return;
+            const unmutedSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="20" height="20" aria-hidden="true"><rect x="0" y="2" width="3" height="4" fill="#000"/><rect x="3" y="1" width="2" height="6" fill="#000"/><rect x="5" y="1" width="1" height="1" fill="#000"/><rect x="5" y="6" width="1" height="1" fill="#000"/><rect x="6" y="1" width="1" height="1" fill="#000"/><rect x="7" y="0" width="1" height="1" fill="#000"/><rect x="6" y="6" width="1" height="1" fill="#000"/><rect x="7" y="7" width="1" height="1" fill="#000"/></svg>';
+            const mutedSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="20" height="20" aria-hidden="true"><rect x="0" y="2" width="3" height="4" fill="#000"/><rect x="3" y="1" width="2" height="6" fill="#000"/><rect x="6" y="0" width="1" height="1" fill="#f33"/><rect x="7" y="1" width="1" height="1" fill="#f33"/><rect x="5" y="3" width="1" height="1" fill="#f33"/><rect x="6" y="4" width="1" height="1" fill="#f33"/><rect x="7" y="5" width="1" height="1" fill="#f33"/></svg>';
+
+            function applyMuted(muted){
+                localStorage.setItem('siteMuted', muted);
+                document.querySelectorAll('audio').forEach(a=>a.muted = muted);
+                btn.innerHTML = muted ? mutedSVG : unmutedSVG;
+                btn.setAttribute('aria-pressed', muted);
+            }
+
+            btn.addEventListener('click', ()=> applyMuted(localStorage.getItem('siteMuted') === 'true' ? false : true));
+            const initMuted = localStorage.getItem('siteMuted') === 'true';
+            applyMuted(initMuted);
+        })();
+    </script>
+    <script>
+        // CV modal open/close logic
+        (function(){
+            const viewBtn = document.getElementById('viewCvBtn');
+            const modal = document.getElementById('cvModal');
+            const closeBtn = document.getElementById('closeCvBtn');
+            const modalCard = modal ? modal.querySelector('.modal-card') : null;
+            if(!viewBtn || !modal) return;
+
+            function openModal(){
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                // focus for accessibility
+                closeBtn && closeBtn.focus();
+            }
+            function closeModal(){
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+                viewBtn.focus();
+            }
+
+            viewBtn.addEventListener('click', openModal);
+            closeBtn && closeBtn.addEventListener('click', closeModal);
+
+            // close on outside click
+            modal.addEventListener('click', (e)=>{
+                if(!modalCard) return;
+                if(!modalCard.contains(e.target)) closeModal();
+            });
+
+            // close on Escape
+            document.addEventListener('keydown', (e)=>{
+                if(e.key === 'Escape' && modal.style.display === 'block') closeModal();
+            });
+        })();
+    </script>
+</body>
+</html>

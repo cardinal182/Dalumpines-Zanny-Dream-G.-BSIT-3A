@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    transition: background 0.3s, color 0.3s;
+    }
+
+.card {
+    width: 260px;
+    padding: 20px;
+    border: 1px solid #000000;
+    text-align: center;
+    animation: cardPop 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+    box-shadow: 0 0 0 8px #232323;
+    border-radius: 0;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.card h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    }
+
+button {
+    margin-top: 15px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    background: #000000;
+    color: white;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+    animation: btnPop 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+    font-family: 'Press Start 2P', monospace;
+    border-radius: 0;
+    box-shadow: 0 0 0 4px #232323;
+    }
+
+body.light {
+    background: #f5f5f5;
+    color: #000000;
+    }
+
+body.dark {
+    background: #000000;
+    color: #ff0000;
+    }
+
+@keyframes cardPop {
+    0% { transform: scale(0.7) rotate(-3deg); opacity: 0; }
+    80% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes btnPop {
+    0% { transform: scale(0.7); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+button:active {
+    background: #ff0000;
+    color: #232323;
+    transform: scale(0.95);
+    box-shadow: 0 0 0 6px #ff0000;
+}
+.back-link{
+    position:fixed;
+    top:12px;left:12px;
+    padding:6px 10px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:13px;
+    opacity:0.65;
+    transition:opacity .15s;}
+.back-link:hover{
+    opacity:1;
+    }
+body.light 
+
+.back-link{
+    background:rgba(255,255,255,0.08);
+    color:#000000;}
+body.dark .back-link{
+    background:rgba(0,0,0,0.45);
+    color:#00fff7;}
